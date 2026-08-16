@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #f7f6f2;
+    color: #171717;
+}
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    background: #f7f6f2;
+    border-bottom: 1px solid #deddd8;
+}
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+nav a {
+    position: relative;
+    color: #171717;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 1px;
+    background: #171717;
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.auth-buttons a {
+    color: #171717;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+}
+.signup-btn {
+    padding: 13px 21px;
+    background: #171717;
+    color: #ffffff !important;
+    transition: 0.3s;
+}
+.signup-btn:hover {
+    background: #444444;
+}
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247, 246, 242, 1) 0%,
+            rgba(247, 246, 242, 0.88) 40%,
+            rgba(247, 246, 242, 0.2) 100%
+        ),
+        url("../img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.hero-content {
+    max-width: 560px;
+}
+.small-title {
+    margin-bottom: 28px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 6px;
+}
+.hero h1 {
+    margin-bottom: 32px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(68px, 8.5vw, 120px);
+    line-height: 0.88;
+    letter-spacing: -4px;
+    font-weight: 400;
+}
+.description {
+    max-width: 430px;
+    margin-bottom: 38px;
+    color: #666666;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    font-weight: 400;
+}
+.shop-btn {
+    display: inline-block;
+    padding: 17px 30px;
+    background: #171717;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+.shop-btn:hover {
+    background: #444444;
+}
+.about {
+    padding: 120px 30px;
+    text-align: center;
+}
+.about > p:first-child {
+    margin-bottom: 25px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.about h2 {
+    margin-bottom: 30px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    font-weight: 400;
+}
+.about-text {
+    max-width: 560px;
+    margin: 0 auto;
+    color: #666666;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px 60px;
+    border-top: 1px solid #deddd8;
+}
+footer p {
+    color: #777777;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+}
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: #f7f6f2;
+}
+.auth-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 50px;
+    background: #ffffff;
+    border: 1px solid #deddd8;
+}
+.back {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #666666;
+    text-decoration: none;
+    font-size: 12px;
+}
+.back:hover {
+    color: #171717;
+}
+.auth-logo {
+    margin-bottom: 35px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 6px;
+}
+.auth-box h1 {
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+.auth-description {
+    margin-bottom: 30px;
+    color: #777777;
+    font-size: 14px;
+    line-height: 1.7;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+input {
+    width: 100%;
+    padding: 14px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    outline: none;
+    background: #ffffff;
+    color: #171717;
+    font-family: inherit;
+    font-size: 14px;
+    transition: 0.2s;
+}
+input::placeholder {
+    color: #aaaaaa;
+}
+input:focus {
+    border-color: #171717;
+}
+button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 5px;
+    border: none;
+    background: #171717;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #444444;
+}
+#signupMessage,
+#signinMessage {
+    min-height: 18px;
+    margin-top: 18px;
+    text-align: center;
+    color: #555555;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.switch-auth {
+    margin-top: 25px;
+    text-align: center;
+    color: #777777;
+    font-size: 12px;
+}
+.switch-auth a {
+    color: #171717;
+    font-weight: 600;
+    text-decoration: none;
+}
+.switch-auth a:hover {
+    text-decoration: underline;
+}
+.shop-page {
+    padding: 80px 60px;
+}
+.shop-header {
+    margin-bottom: 60px;
+}
+.shop-header p {
+    margin-bottom: 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+.shop-header h1 {
+    margin-bottom: 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 75px;
+    line-height: 1;
+    letter-spacing: -3px;
+    font-weight: 400;
+}
+.shop-header span {
+    color: #777777;
+    font-size: 14px;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px 20px;
+}
+.product-card {
+    cursor: pointer;
+}
+.product-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #eeeeeb;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+.product-info {
+    padding-top: 15px;
+}
+.product-category {
+    margin-bottom: 8px;
+    color: #888888;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.product-info h2 {
+    margin-bottom: 9px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.product-price {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+@media (max-width: 1000px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 900px) {
+    header {
+        padding: 0 30px;
+    }
+    nav {
+        gap: 20px;
+    }
+    .hero {
+        padding: 60px 40px;
+    }
+    footer {
+        padding: 40px 30px;
+    }
+}
+@media (max-width: 700px) {
+    .shop-page {
+        padding: 60px 25px;
+    }
+    .shop-header h1 {
+        font-size: 55px;
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 12px;
+    }
+}
+@media (max-width: 650px) {
+    header {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 25px;
+    }
+    .logo {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+    }
+    nav a {
+        font-size: 12px;
+    }
+    .auth-buttons {
+        gap: 12px;
+    }
+    .hero {
+        min-height: 700px;
+        padding: 50px 25px;
+        background-position: 65% center;
+    }
+    .hero h1 {
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
+    .description {
+        font-size: 14px;
+    }
+    .about {
+        padding: 80px 25px;
+    }
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 35px 25px;
+        text-align: center;
+    }
+    .auth-page {
+        padding: 20px;
+    }
+    .auth-box {
+        padding: 35px 25px;
+    }
+    .auth-logo {
+        font-size: 32px;
+        letter-spacing: 5px;
+    }
+    .auth-box h1 {
+        font-size: 26px;
+    }
+}
+@media (max-width: 450px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}

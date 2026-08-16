@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In | TÉM</title>
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <div class="auth-box">
+        <a href="index.html" class="back"> ← Back </a>
+        <div class="auth-logo">TÉM</div>
+        <h1>Welcome back</h1>
+        <p class="auth-description">Sign in to continue shopping with TÉM.</p>
+        <form id="signinForm">
+          <label for="signinEmail"> Email </label>
+          <input
+            type="email"
+            id="signinEmail"
+            placeholder="example@gmail.com"
+            required
+          />
+          <label for="signinPassword"> Password </label>
+          <input
+            type="password"
+            id="signinPassword"
+            placeholder="••••••••"
+            required
+          />
+          <button type="submit">SIGN IN</button>
+        </form>
+        <p id="signinMessage"></p>
+        <p class="switch-auth">
+          Don't have an account?
+          <a href="signup.html"> Create account </a>
+        </p>
+      </div>
+    </div>
+    <script type="module" src="../static/js/auth.js"></script>
+  </body>
+</html>
