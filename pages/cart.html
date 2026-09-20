@@ -2,10 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TÉM — Shop</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>TÉM — Cart</title>
+
     <link rel="stylesheet" href="../static/css/styles.css" />
   </head>
+
   <body>
     <header class="header">
       <div class="logo">
@@ -19,15 +21,20 @@
       </nav>
       <div class="auth-buttons" id="authButtons"></div>
     </header>
-    <main class="shop-page">
+
+    <main class="cart-page">
       <section class="shop-header">
-        <p>EXPLORE TÉM</p>
-        <h1>SHOP</h1>
-        <span>Discover our latest collection.</span>
+        <p>TÉM / SHOPPING</p>
+
+        <h1>CART</h1>
+
+        <span> Review your selected pieces. </span>
       </section>
-      <section class="product-grid" id="productGrid"></section>
+
+      <section id="cartContainer"></section>
     </main>
-    <script type="module" src="../static/js/shop.js"></script>
+
+    <script type="module" src="../static/js/cart.js"></script>
     <script type="module" src="../static/js/header.auth.js"></script>
   </body>
 </html>

@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>TÉM — Checkout</title>
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">TÉM</a>
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="newin.html">NEW IN</a>
+        <a href="sale.html">SALE</a>
+      </nav>
+      <div class="auth-buttons" id="authButtons"></div>
+    </header>
+    <main class="checkout-page">
+      <section class="shop-header">
+        <p>TÉM / SHOPPING</p>
+        <h1>CHECKOUT</h1>
+        <span>Complete your order.</span>
+      </section>
+      <div class="checkout-layout">
+        <section class="checkout-form">
+          <h2>SHIPPING INFORMATION</h2>
+          <form id="checkoutForm">
+            <label for="fullName">FULL NAME</label>
+            <input type="text" id="fullName" autocomplete="name" required />
+            <label for="phone">PHONE NUMBER</label>
+            <input type="tel" id="phone" autocomplete="tel" required />
+            <label for="address">ADDRESS</label>
+            <input
+              type="text"
+              id="address"
+              autocomplete="street-address"
+              required
+            />
+            <label for="note">NOTE</label>
+            <textarea id="note" rows="4" placeholder="Optional"></textarea>
+            <h2>PAYMENT METHOD</h2>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="COD" checked />
+              CASH ON DELIVERY
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="WALLET" />
+              TÉM WALLET
+            </label>
+            <a href="wallet.html" class="checkout-wallet-link"
+              >MANAGE TÉM WALLET</a
+            >
+            <button type="submit" class="place-order-btn">PLACE ORDER</button>
+          </form>
+        </section>
+        <aside id="checkoutSummary"></aside>
+      </div>
+    </main>
+    <script type="module" src="../static/js/checkout.js"></script>
+    <script type="module" src="../static/js/header.auth.js"></script>
+  </body>
+</html>

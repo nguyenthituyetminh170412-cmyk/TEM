@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="../static/css/styles.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">TÉM</div>
-      <nav>
-        <a href="index.html">HOME</a>
-        <a href="shop.html">SHOP</a>
-        <a href="#">NEW IN</a>
-        <a href="#">SALE</a>
-      </nav>
-      <div class="auth-buttons">
-        <a href="signin.html">SIGN IN</a>
-        <a href="signup.html" class="signup-btn">SIGN UP</a>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">TÉM</a>
       </div>
+      <nav class="nav-menu">
+        <a href="index.html"> HOME </a>
+        <a href="shop.html"> SHOP </a>
+        <a href="newin.html"> NEW IN </a>
+        <a href="sale.html"> SALE </a>
+      </nav>
+      <div class="auth-buttons" id="authButtons"></div>
     </header>
     <main>
       <section class="hero">
@@ -54,5 +53,6 @@
       <div class="logo">TÉM</div>
       <p>© 2026 TÉM. All rights reserved.</p>
     </footer>
+    <script type="module" src="../static/js/header.auth.js"></script>
   </body>
 </html>
