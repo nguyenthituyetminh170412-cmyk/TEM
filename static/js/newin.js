@@ -1,8 +1,12 @@
 import { db, collection, getDocs } from "./firebase.config.js";
+// Lấy khu vực hiển thị sản phẩm NEW IN
 const newInGrid = document.getElementById("newInGrid");
+// Tải sản phẩm NEW IN từ Firestore
 async function loadNewIn() {
     try {
+        // Lấy toàn bộ sản phẩm
         const snapshot = await getDocs(collection(db, "products"));
+        // Chuyển dữ liệu thành mảng
         const products = [];
         snapshot.forEach(doc => {
             products.push({
@@ -10,7 +14,11 @@ async function loadNewIn() {
                 ...doc.data()
             });
         });
-        const newProducts = products.filter(product => product.isNew === true);
+        // Chỉ lấy sản phẩm có isNew = true
+        const newProducts = products.filter(
+            product => product.isNew === true
+        );
+        // Nếu không có sản phẩm mới
         if (newProducts.length === 0) {
             newInGrid.innerHTML = `
                 <p style="grid-column:1/-1;text-align:center;color:#777;">
@@ -19,6 +27,7 @@ async function loadNewIn() {
             `;
             return;
         }
+        // Tạo giao diện cho từng sản phẩm mới
         newInGrid.innerHTML = newProducts.map(product => `
             <div class="product-card" onclick="location.href='product.detail.html?id=${product.id}'">
                 <div class="product-image">
@@ -36,6 +45,7 @@ async function loadNewIn() {
             </div>
         `).join("");
     } catch (error) {
+        // Hiển thị lỗi nếu không tải được sản phẩm
         console.error("Error loading NEW IN:", error);
         newInGrid.innerHTML = `
             <p style="grid-column:1/-1;text-align:center;color:#777;">
@@ -44,5 +54,5 @@ async function loadNewIn() {
         `;
     }
 }
+// Chạy hàm khi mở trang
 loadNewIn();
-
