@@ -31,9 +31,6 @@
           <a href="#" class="admin-menu-item" data-section="inventory"
             ><span>05</span>INVENTORY</a
           >
-          <a href="#" class="admin-menu-item" data-section="settings"
-            ><span>06</span>SETTINGS</a
-          >
         </nav>
         <div class="admin-sidebar-bottom">
           <a href="./index.html">VIEW STORE</a>
@@ -57,16 +54,20 @@
           </div>
           <div class="stats-grid">
             <div class="stat-card">
-              <span>PRODUCTS</span><strong id="productCount">0</strong>
+              <span>PRODUCTS</span>
+              <strong id="productCount">0</strong>
             </div>
             <div class="stat-card">
-              <span>ORDERS</span><strong id="orderCount">0</strong>
+              <span>ORDERS</span>
+              <strong id="orderCount">0</strong>
             </div>
             <div class="stat-card">
-              <span>CUSTOMERS</span><strong id="customerCount">0</strong>
+              <span>CUSTOMERS</span>
+              <strong id="customerCount">0</strong>
             </div>
             <div class="stat-card">
-              <span>STOCK</span><strong id="stockCount">0</strong>
+              <span>STOCK</span>
+              <strong id="stockCount">0</strong>
             </div>
           </div>
           <div class="dashboard-box">
@@ -156,10 +157,29 @@
               <h2>Customers</h2>
             </div>
           </div>
-          <div class="empty-admin-box">
-            <span>04</span>
-            <h3>Customer Management</h3>
-            <p>Customer information can be managed here.</p>
+          <div class="admin-table-box">
+            <div class="table-top">
+              <span id="customerTotal">0 CUSTOMERS</span>
+              <input
+                type="text"
+                id="customerSearch"
+                placeholder="Search customers..."
+              />
+            </div>
+            <div class="table-responsive">
+              <table class="table admin-table">
+                <thead>
+                  <tr>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>PHONE</th>
+                    <th>ROLE</th>
+                    <th>ACCOUNT</th>
+                  </tr>
+                </thead>
+                <tbody id="customerTableBody"></tbody>
+              </table>
+            </div>
           </div>
         </section>
         <section id="inventorySection" class="admin-section">
@@ -170,19 +190,6 @@
             </div>
           </div>
           <div class="inventory-grid" id="inventoryGrid"></div>
-        </section>
-        <section id="settingsSection" class="admin-section">
-          <div class="section-heading">
-            <div>
-              <p>ADMINISTRATION</p>
-              <h2>Settings</h2>
-            </div>
-          </div>
-          <div class="empty-admin-box">
-            <span>06</span>
-            <h3>Store Settings</h3>
-            <p>Store and administrator settings can be managed here.</p>
-          </div>
         </section>
       </main>
     </div>
@@ -292,6 +299,5 @@
       </div>
     </div>
     <script type="module" src="../static/js/admin.js"></script>
-    <script type="module" src="../static/js/header.auth.js"></script>ript>
   </body>
 </html>

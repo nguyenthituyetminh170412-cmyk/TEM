@@ -16,7 +16,9 @@ onAuthStateChanged(auth, async user => {
     }
 
     try {
-        const userDoc = await getDoc(doc(db, "user", user.uid));
+        const userDoc = await getDoc(
+            doc(db, "user", user.uid)
+        );
 
         if (!userDoc.exists()) {
             await auth.signOut();
@@ -25,8 +27,12 @@ onAuthStateChanged(auth, async user => {
 
         const userData = userDoc.data();
 
-        if (userData.roleId === "admin") {
-            window.location.href = "./admin.html";
+        const roleId = String(userData.roleId || "")
+            .trim()
+            .toLowerCase();
+
+        if (roleId === "admin") {
+            window.location.href = "./index.html";
         }
     } catch (error) {
         console.error("Admin check error:", error);
@@ -42,7 +48,8 @@ if (adminLoginForm) {
             .value
             .trim();
 
-        const password = document.getElementById("adminPassword").value;
+        const password =
+            document.getElementById("adminPassword").value;
 
         try {
             message.textContent = "Signing in...";
@@ -71,7 +78,11 @@ if (adminLoginForm) {
 
             const userData = userDoc.data();
 
-            if (userData.roleId !== "admin") {
+            const roleId = String(userData.roleId || "")
+                .trim()
+                .toLowerCase();
+
+            if (roleId !== "admin") {
                 await auth.signOut();
 
                 message.textContent =
@@ -84,7 +95,7 @@ if (adminLoginForm) {
                 "Admin login successful.";
 
             setTimeout(() => {
-                window.location.href = "./admin.html";
+                window.location.href = "./index.html";
             }, 500);
 
         } catch (error) {
@@ -118,4 +129,3 @@ if (adminLoginForm) {
         }
     });
 }
-

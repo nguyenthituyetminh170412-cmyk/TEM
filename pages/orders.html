@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TÉM — My Orders</title>
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">TÉM</a>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="index.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="newin.html">NEW IN</a>
+        <a href="sale.html">SALE</a>
+      </nav>
+
+      <div class="auth-buttons" id="authButtons"></div>
+    </header>
+
+    <main class="orders-page">
+      <section class="shop-header">
+        <p>TÉM / ACCOUNT</p>
+        <h1>MY ORDERS</h1>
+        <span>Review your orders.</span>
+      </section>
+
+      <section id="ordersContainer"></section>
+    </main>
+
+    <script type="module" src="../static/js/orders.js"></script>
+    <script type="module" src="../static/js/header.auth.js"></script>
+  </body>
+</html>
